@@ -2,13 +2,13 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class InvadersBullets extends Game {
-    static ArrayList<InvadersBullet> bullets = new ArrayList<>();
+     ArrayList<InvadersBullet> bullets = new ArrayList<>();
 
     void add(int x, int y) {
         bullets.add(new InvadersBullet(x, y));
     }
 
-    static void fly() {
+     void fly() {
         for (InvadersBullet bullet : bullets) bullet.fly();
         for (InvadersBullet bullet : bullets)
             if (bullet.offScreen()) {
@@ -17,6 +17,7 @@ public class InvadersBullets extends Game {
             }
         for (InvadersBullet bullet : bullets)
             if (bullet.hitCannon()) {
+                bang.enable();
                 lives--;
                 cannon = new Cannon();
                 gameOver = lives == 0;

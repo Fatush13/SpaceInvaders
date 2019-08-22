@@ -35,12 +35,12 @@ public class Cannon extends Constants {
     }
 
     void paint(Graphics g) {
-        //  if(!shoot.isShot()){
+          if(!Game.bang.isBang()){
         g.setColor(Color.GREEN);
         g.fillRect(x, y + CANNON_HEIGHT / 2, CANNON_WIDTH, CANNON_HEIGHT / 2);
         g.fillRect(x + 2, y + CANNON_HEIGHT / 2 - 2, CANNON_WIDTH - 4, CANNON_HEIGHT / 2);
         g.fillRect(x + 10, y + 2, CANNON_WIDTH - 20, CANNON_HEIGHT / 2);
         g.fillRect(x + 12, y, 2, 2);
-        //  }
+          }
     }
 }

@@ -1,8 +1,8 @@
 import java.awt.*;
-import java.util.concurrent.BlockingDeque;
 
 public class Invader extends Constants {
-    int x, y, type, animation = 0;
+    int x, y = 0;
+           int type, animation = 0;
     int width, height = 8;
 
     Invader(int x, int y, int type) {
@@ -11,6 +11,7 @@ public class Invader extends Constants {
         this.type = type;
         width = INVADERS_TYPES[type][animation][8][0];
     }
+
 
     int getType() {
         return type;
@@ -37,6 +38,9 @@ public class Invader extends Constants {
         else if (direction == DOWN) y += MOVE_Y;
     }
 
+    void explode() {
+        Game.explosion.enable(x, y -2);
+    }
 
     void paint(Graphics g) {
         g.setColor(Color.WHITE);

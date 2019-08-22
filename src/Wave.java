@@ -46,6 +46,7 @@ public class Wave extends Constants {
         for (Invader invader : wave) // check hit alien
             if (invader.isHit()) {
                 Game.score += (invader.getType() + 1) * 10;
+                invader.explode();
                 wave.remove(invader);
                 numFrames = 10 + (int) (20f / 55f * wave.size()); // increase wave's speed
                 if (countFrames > numFrames) countFrames = numFrames; // correct countFrames

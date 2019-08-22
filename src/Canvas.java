@@ -13,7 +13,9 @@ public class Canvas extends JPanel {
             Game.cannon.paint(g);
             Game.wave.paint(g);
             Game.bullet.paint(g);
+            Game.explosion.paint(g);
             Game.bullets.paint(g);
+            Game.bang.paint(g);
         }
     }
 }
